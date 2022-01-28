@@ -1,0 +1,14 @@
+{% autoescape off %}
+
+Welcome to DJango LoggedIn
+
+Hello {{ name }}!
+
+Please COnfrim your email by clicking on the following link.
+
+Confrmation link: http://{{ domain }}{% url 'activate' uidb64=uid token=token %}
+
+
+
+
+{% endautoescape %}

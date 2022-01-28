@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--[if lt If 7]> <html class = "no.js lt =  ie9 lt=ie7"> <![endif]-->
+<!--[if IE  7]> <html class = "no.js lt =  ie9 lt=ie8"> <![endif]-->
+<!--[if IE 8]> <html class = "no.js lt =  ie9"> <![endif]-->
+<!--[if gt IE 8]> <html class = "no.js>  <![endif]-->
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Authentication</title>
+    <meta name = "description" content = "">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href = "">
+   
+  </head>
+  <body>
+    
+    {% for message in messages %}
+    <div class = "alert alert-{{message.tags}} alert-dismissible fade show" role = "alert">
+      <strong> Message: </strong> {{ message }}
+      <button type = "button" class="close" data-dismiss = "alert" aria-label= "close">
+      <span aria-hidden = "true">&times;</span></buton>
+    {% endfor %}
+
+
+    <h1>Sign In</h1>
+    <p>Please fill in this form to create an account.</p>
+    <hr>
+      <form action = "/signin" method = "POST">
+        
+          {% csrf_token %}
+            <label for=""> <b>UserName</b></label>
+            <input type = "text" id="username" name = "username" placeholder = "Enter Your Username"  required>
+            <br>
+
+            <label for=""> <b>Password</b></label>
+            <input type = "password" id="pass1" name = "pass1" placeholder = "Enter Your Password" required>
+            <br>
+
+            <button type="submit">Sign In</button>
+          </form>
+
+     
+      
+	<script src="index.js"></script>
+  </body>
+</html>
